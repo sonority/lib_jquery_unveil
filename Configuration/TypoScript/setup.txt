@@ -1,0 +1,41 @@
+page {
+	includeJSFooterlibs {
+		lib_jquery_unveil = EXT:lib_jquery_unveil/Resources/Public/JavaScript/jquery.unveil.min.js
+		lib_jquery_unveil {
+			disableCompression = 1
+			forceOnTop = 1
+		}
+	}
+	jsFooterInline {
+		101 = COA
+		101 {
+			822 = COA
+			822 {
+				1 = TEXT
+				1.value = var lazyClass='img.img-lazy';
+				2 = TEXT
+				2.wrap = $(function(){ | });
+				2.value = $(lazyClass).unveil();
+			}
+		}
+	}
+}
+
+[globalVar = LIT:{$plugin.lib_jquery_unveil.settings.effect} = fadeIn]
+page {
+	cssInline {
+		101 = COA
+		101 {
+			1 = TEXT
+			1.value = img.img-lazy {opacity:0; transition:opacity .3s ease-in;}
+		}
+	}
+	jsFooterInline.101.822.2.value (
+$(lazyClass).unveil(200, function() {
+	$(this).load(function() {
+		this.style.opacity = 1;
+	});
+});
+	)
+}
+[end]

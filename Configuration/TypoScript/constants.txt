@@ -1,0 +1,6 @@
+plugin.tx_libjqueryunveil {
+	 # cat=plugin.lib_jquery_unveil//1; type=options[off=,fadeIn=fadeIn]; label=Select effect
+	effect = fadeIn
+	 # cat=plugin.lib_jquery_unveil//3; type=string; label=Select loading-image
+	lazyClass = img.img-lazy
+}
