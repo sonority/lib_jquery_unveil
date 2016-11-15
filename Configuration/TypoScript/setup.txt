@@ -12,7 +12,7 @@ page {
 			822 = COA
 			822 {
 				1 = TEXT
-				1.value = var lazyClass='img.img-lazy';
+				1.value = var lazyClass='{$plugin.tx_libjqueryunveil.lazyClass}';
 				2 = TEXT
 				2.wrap = $(function(){ | });
 				2.value = $(lazyClass).unveil();
@@ -21,13 +21,13 @@ page {
 	}
 }
 
-[globalVar = LIT:{$plugin.lib_jquery_unveil.settings.effect} = fadeIn]
+[globalVar = LIT:{$plugin.tx_libjqueryunveil.effect} = fadeIn]
 page {
 	cssInline {
-		101 = COA
-		101 {
+		8744 = COA
+		8744 {
 			1 = TEXT
-			1.value = img.img-lazy {opacity:0; transition:opacity .3s ease-in;}
+			1.value = {$plugin.tx_libjqueryunveil.lazyClass} {opacity:0; transition:opacity .3s ease-in;}
 		}
 	}
 	jsFooterInline.101.822.2.value (
@@ -38,4 +38,4 @@ $(lazyClass).unveil(200, function() {
 });
 	)
 }
-[end]
+[global]
